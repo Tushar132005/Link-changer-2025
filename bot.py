@@ -50,9 +50,11 @@ async def get_token(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Log user data
     user_info = update.effective_user
-    user_text = f"👤 User: {user_info.first_name} (ID: {user_info.id})
-🔗 Link: {original_link}
-🔑 Token: {token}"
+    user_text = (
+    f"👤 User: {user_info.first_name} (ID: {user_info.id})\n"
+    f"🔗 Link: {original_link}\n"
+    f"🔑 Token: {token}"
+)
     logging.info(user_text)
 
     # Send user data to admin channel
