@@ -59,9 +59,7 @@ async def get_token(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Send user data to admin channel
     await context.bot.send_message(chat_id=ADMIN_LOG_CHANNEL_ID, text=user_text)
-
-    await update.message.reply_text(f"✅ Here is your modified link:
-{api_link}")
+    await update.message.reply_text(f"✅ Here is your modified link:\n{api_link}")
     return ConversationHandler.END
 
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
