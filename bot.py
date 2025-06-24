@@ -15,7 +15,7 @@ logging.basicConfig(
 )
 
 # Config from environment
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("7966754222:AAEfteIIJN2Ad4sgldNGSxKtsaBurfla0dM")
 FORCE_SUB_CHANNEL_ID = int(os.getenv("-1002816346575"))  # Use numeric ID for private channel
 ADMIN_LOG_CHANNEL_ID = int(os.getenv("-1002679023477"))
 
