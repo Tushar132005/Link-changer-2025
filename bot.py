@@ -16,15 +16,15 @@ logging.basicConfig(
 
 # Config from environment
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-FORCE_SUB_CHANNEL_ID = int(os.getenv("FORCE_SUB_CHANNEL_ID"))  # Use numeric ID for private channel
-ADMIN_LOG_CHANNEL_ID = int(os.getenv("ADMIN_LOG_CHANNEL_ID"))
+FORCE_SUB_CHANNEL_ID = int(os.getenv("-1002816346575"))  # Use numeric ID for private channel
+ADMIN_LOG_CHANNEL_ID = int(os.getenv("-1002679023477"))
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     chat_member = await context.bot.get_chat_member(FORCE_SUB_CHANNEL_ID, user_id)
     if chat_member.status in ['left', 'kicked']:
         join_button = InlineKeyboardMarkup([
-            [InlineKeyboardButton("Join Channel", url="https://t.me/YourChannelLink")]  # Replace with your invite link
+            [InlineKeyboardButton("Join Channel", url="https://t.me/+X1hVDFMb76hiMWIy")]  # Replace with your invite link
         ])
         await update.message.reply_text("🚫 You must join our private channel to use this bot.", reply_markup=join_button)
         return ConversationHandler.END
