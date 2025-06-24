@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: telegram-link-changer-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        value: your_real_bot_token
+      - key: FORCE_SUB_CHANNEL_ID
+        value: 1234567890
+      - key: ADMIN_LOG_CHANNEL_ID
+        value: 987654321
