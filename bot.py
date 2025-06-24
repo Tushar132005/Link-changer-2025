@@ -13,11 +13,11 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-
 # Config from environment
-BOT_TOKEN = os.getenv("7966754222:AAEfteIIJN2Ad4sgldNGSxKtsaBurfla0dM")
-FORCE_SUB_CHANNEL_ID = int(os.getenv("-1002816346575"))  # Use numeric ID for private channel
-ADMIN_LOG_CHANNEL_ID = int(os.getenv("-1002679023477"))
+BOT_TOKEN = os.getenv("BOT_TOKEN")  # Set this in Render environment variables
+
+FORCE_SUB_CHANNEL_ID = int(os.getenv("FORCE_SUB_CHANNEL_ID", "-1002816346575"))  # Default fallback
+ADMIN_LOG_CHANNEL_ID = int(os.getenv("ADMIN_LOG_CHANNEL_ID", "-1002679023477"))  # Default fallback
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
